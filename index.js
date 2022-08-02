@@ -144,7 +144,7 @@ commandPrompt({
       }
     },
     {
-      name: 'Create a new C++ component',
+      name: 'Create a new C++ component (not implemented)',
       choices: [
         {
           name: 'clone project',
@@ -161,7 +161,7 @@ commandPrompt({
       ]
     },
     {
-      name: 'Select example and convert to C++',
+      name: 'Select example and convert to C++ (not implemented)',
       choices: [
         {
           name: 'clone project',
@@ -178,7 +178,24 @@ commandPrompt({
       ]
     },
     {
-      name: 'Convert existing C project to C++',
+      name: 'Fix IntelliSense only (not implemented yet)',
+      choices: [
+        {
+          name: 'clone project',
+          method() {
+            console.log('git clone.....');
+          }
+        },
+        {
+          name: 'fetch project',
+          method() {
+            console.log('git fetch.....');
+          }
+        }
+      ]
+    },
+    {
+      name: '{Straight up doesnt work} Convert existing C project to C++',
         async method() {
           // Add test check if dir is actually IDF project
           // TEST
@@ -202,7 +219,7 @@ commandPrompt({
             }
           ])
 
-          if(shouldMakeCXX) {
+          if(shouldMakeCXX.cxxReady) {
             await promiseSpinner(`Editing CMakeLists.txt`, new Promise(async (res, rej) => {
               try {
                 // edit first CMakeLists.txt
@@ -320,6 +337,25 @@ commandPrompt({
                 res()
               } catch(e) { rej(e) }
             }), `Done editing CMakeLists.txt`)
+
+
+            // WARNING: Doesn't work lel
+            const shouldConvertCpp = await inquirer.prompt([
+              {
+                type: 'confirm',
+                message: chalk.greenBright(`Now that your project is C++ ready, do you want to convert the main files into cpp?`),
+                name: 'cppConvert',
+                default: true
+              }
+            ])
+
+            if(shouldConvertCpp.cppConvert) {
+              log(chalk.redBright('Beware of the fact that this CLI tool adds "using namespace idf;" for convenience only.'))
+              // choose file etc etc
+            }
+          } else {
+            // test
+            log(chalk.whiteBright('Okay! See you later!'))
           }
         }
     },
