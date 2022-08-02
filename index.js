@@ -350,8 +350,14 @@ commandPrompt({
             ])
 
             if(shouldConvertCpp.cppConvert) {
-              log(chalk.redBright('Beware of the fact that this CLI tool adds "using namespace idf;" for convenience only.'))
+                        //log(chalk.redBright('Beware of the fact that this CLI tool adds "using namespace idf;" for convenience only.'))
               // choose file etc etc
+
+              // rename file from .c to .cpp
+              // add 'extern "C"' in front of 'void app_main(void)'
+              // that's basically it I suppose
+
+              // sometimes using namespace idf; doesnt work dunno why idc
             }
           } else {
             // test
