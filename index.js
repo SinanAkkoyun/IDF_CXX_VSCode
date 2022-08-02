@@ -54,14 +54,16 @@ log(chalk.greenBright(figlet.textSync('ESP IDF CXX', {
   //whitespaceBreak: false
 })))
 
-stdout.write(chalk.green('esp-idf:') + chalk.blue('~') + chalk.white('# '))
-/*await slowTyping*/log(chalk.greenBright('initializing C++ project...'))//, 25)
-//log()
+//stdout.write(chalk.green('esp-idf:') + chalk.blue('~') + chalk.white('# '))
+stdout.write(chalk.white(' [ ') + chalk.blueBright('Visual Studio Code') + chalk.white(' / ') + chalk.red('ESP-IDF') + chalk.white(' / ') + chalk.cyanBright('C++ ') + chalk.white(' ] '))
+
+//await slowTyping log(chalk.greenBright('initializing C++ project...'))//, 25)
+log()
 
 
 log()
 commandPrompt({
-  name: chalk.cyanBright('How may I help you?'),
+  name: chalk.cyanBright('Please select one of the actions below'),
   choices: [
     {
       name: 'Create a new C++ project',
