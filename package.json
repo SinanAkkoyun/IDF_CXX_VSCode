@@ -1,0 +1,46 @@
+{
+  "type": "module",
+  "name": "htbinit",
+  "version": "1.0.0",
+  "description": "A script that automagically inits your HTB box hacks. mkdirs, nmaps and dirbusts etc with one command",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "bin": {
+    "htbinit": "./index.js"
+  },
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SinanAkkoyun/HTB_init.git"
+  },
+  "keywords": [
+    "HTB",
+    "init",
+    "startup",
+    "magic"
+  ],
+  "author": "Sinan Akkoyun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SinanAkkoyun/HTB_init/issues"
+  },
+  "homepage": "https://github.com/SinanAkkoyun/HTB_init#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "command-prompt": "^0.0.6",
+    "commander": "^8.1.0",
+    "del": "^7.0.0",
+    "figlet": "^1.5.0",
+    "git-clone": "^0.2.0",
+    "inquirer": "^8.1.2",
+    "inquirer-select-directory": "^1.2.0",
+    "ip-validator": "^0.0.1",
+    "is-online": "^9.0.1",
+    "openvpn-cli-wrapper": "^1.0.1",
+    "ora": "^5.4.1",
+    "psaux": "^0.4.0",
+    "terminal-kit": "^2.1.6"
+  }
+}
