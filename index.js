@@ -54,7 +54,7 @@ log(chalk.greenBright(figlet.textSync('ESP IDF CXX', {
   //whitespaceBreak: false
 })))
 
-//stdout.write(chalk.green('esp-idf:') + chalk.blue('~') + chalk.white('# '))
+stdout.write(chalk.cyanBright(' Made by Sinan\n'))
 stdout.write(chalk.white(' [ ') + chalk.blueBright('Visual Studio Code') + chalk.white(' / ') + chalk.red('ESP-IDF') + chalk.white(' / ') + chalk.cyanBright('C++ ') + chalk.white(' ] '))
 
 //await slowTyping log(chalk.greenBright('initializing C++ project...'))//, 25)
